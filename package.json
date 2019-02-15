@@ -6,7 +6,6 @@
     "@rails/webpacker": "3.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.0-beta",
-    "babel-preset-react": "^6.24.1",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "prop-types": "^15.7.2",
@@ -28,8 +27,12 @@
     "test": "jest"
   },
   "jest": {
-    "roots": [
+    "moduleDirectories": [
+      "node_modules",
       "app/javascript/packs"
+    ],
+    "roots": [
+      "spec/javascript"
     ]
   }
 }
