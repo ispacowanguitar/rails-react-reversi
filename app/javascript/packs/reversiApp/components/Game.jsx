@@ -1,8 +1,9 @@
 import React from "react";
+import Square from "components/Square";
 
 class Game extends React.Component {
   render() {
-    return <div>This is game</div>;
+    return <Square />;
   }
 }
 

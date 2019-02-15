@@ -29,6 +29,7 @@
   "jest": {
     "moduleDirectories": [
       "node_modules",
+      "app/javascript/packs/reversiApp",
       "app/javascript/packs"
     ],
     "roots": [
