@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Game from "packs/reversiApp/components/Game";
+import Game from "components/Game";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Game />, document.getElementById("reversi-app"));
