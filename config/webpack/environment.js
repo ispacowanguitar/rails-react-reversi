@@ -2,11 +2,10 @@ const { environment } = require("@rails/webpacker");
 module: {
   rules: [
     {
-      test: /\.js(\.erb)?$/,
       exclude: /node_modules/,
       loader: "babel-loader",
       options: {
-        presets: [["@babel/preset-env", { modules: false }]]
+        presets: [["env", { modules: false }]]
       }
     }
   ];
