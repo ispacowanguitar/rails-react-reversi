@@ -3,8 +3,8 @@ import { shallow } from "enzyme";
 import Game from "components/Game";
 
 describe("<Game />", () => {
-  it("Renders a square component", () => {
+  it("Renders 64 squares", () => {
     const wrapper = shallow(<Game />);
-    expect(wrapper.find("Square").length).toBe(1);
+    expect(wrapper.find("Square").length).toBe(64);
   });
 });
