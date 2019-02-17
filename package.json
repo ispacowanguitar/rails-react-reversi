@@ -24,6 +24,6 @@
     "webpack-dev-server": "3.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --env=jsdom"
   }
 }
