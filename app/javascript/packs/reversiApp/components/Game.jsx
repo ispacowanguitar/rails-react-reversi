@@ -1,7 +1,5 @@
 import React from "react";
 import Square from "components/Square";
-const NUMBER_OF_SQUARES = 8;
-const NUMBER_OF_ROWS = 8;
 const INITIAL_BOARD_STATE = [
   [null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null],
