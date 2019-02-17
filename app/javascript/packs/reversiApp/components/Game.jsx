@@ -2,14 +2,28 @@ import React from "react";
 import Square from "components/Square";
 const NUMBER_OF_SQUARES = 8;
 const NUMBER_OF_ROWS = 8;
+const INITIAL_BOARD_STATE = [
+  [null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null],
+  [null, null, null, "white", "black", null, null, null],
+  [null, null, null, "black", "white", null, null, null],
+  [null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null]
+];
 
 class Game extends React.Component {
+  constructor() {
+    super();
+    this.state = { board: INITIAL_BOARD_STATE };
+  }
   render() {
     return (
       <div className="board">
-        {[...Array(NUMBER_OF_SQUARES)].map((x, row) => {
-          return [...Array(NUMBER_OF_ROWS)].map((x, column) => {
-            return <Square key={`${row}-${column}`} />;
+        {this.state.board.map((row, i) => {
+          return row.map((squareState, j) => {
+            return <Square chip={squareState} key={`${i}-${j}`} />;
           });
         })}
       </div>
