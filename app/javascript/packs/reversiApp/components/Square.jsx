@@ -13,9 +13,13 @@ const getChipImageFromProps = piece => {
   }
 };
 
-const Square = ({ chip }) => {
+const Square = ({ chip, onSquareClick }) => {
   const chipImage = getChipImageFromProps(chip);
-  return <div className="square">{chip && <img src={chipImage} />}</div>;
+  return (
+    <div onClick={onSquareClick} className="square">
+      {chip && <img src={chipImage} />}
+    </div>
+  );
 };
 
 export default Square;
