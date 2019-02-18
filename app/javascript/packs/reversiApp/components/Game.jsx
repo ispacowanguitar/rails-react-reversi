@@ -2,20 +2,19 @@ import React from "react";
 import Square from "components/Square";
 import { calculateBoardStateAfterClick } from "utils/boardStateCalculator";
 
-const INITIAL_BOARD_STATE = [
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, "white", "black", null, null, null],
-  [null, null, null, "black", "white", null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null]
-];
-
 class Game extends React.Component {
   constructor() {
     super();
+    const INITIAL_BOARD_STATE = [
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, "white", "black", null, null, null],
+      [null, null, null, "black", "white", null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null, null]
+    ];
     this.state = { board: INITIAL_BOARD_STATE, currentTeamsColor: "black" };
   }
 

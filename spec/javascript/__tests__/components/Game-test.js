@@ -21,10 +21,9 @@ describe("<Game />", () => {
 
   describe("Turn one (black first)", () => {
     describe("When a valid square is clicked", () => {
-      it.only("places a black chip in that square", () => {
+      it("puts a new black chip down and flips the sandwiched piece", () => {
         const wrapper = mount(<Game />);
         const validSquare = wrapper.find("Square").get(26);
-        const sandwichedSquare = wrapper.find("Square").get(27);
 
         validSquare.props.onSquareClick();
         wrapper.update();
