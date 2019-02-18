@@ -13,7 +13,7 @@ describe("calculateBoardStateAfterClick", () => {
   ];
   describe("when a valid square is clicked", () => {
     describe("when the sandwiched squares are to the right", () => {
-      it("", () => {
+      it("updates the board correctly", () => {
         const clickedSquare = { row: 3, column: 2 };
 
         const actual = calculateBoardStateAfterClick(
