@@ -2,6 +2,7 @@ import React from "react";
 import Square from "components/Square";
 import _ from "lodash";
 import { calculateBoardStateAfterClick } from "utils/boardStateCalculator";
+import "assets/stylesheets/boardStyles";
 
 class Game extends React.Component {
   constructor() {
