@@ -8,6 +8,7 @@
     "babel-loader": "^8.0.0-beta",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
@@ -24,6 +25,7 @@
     "webpack-dev-server": "3.0.0"
   },
   "scripts": {
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --env=jsdom"
   }
 }
