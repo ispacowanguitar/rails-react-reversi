@@ -12,9 +12,8 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "syntax-dynamic-import",
-    "@babel/plugin-proposal-object-rest-spread",
-    "transform-object-rest-spread",
+    "@babel/syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
     [
       "transform-class-properties",
       {
@@ -24,7 +23,7 @@
   ],
   "env": {
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
     }
   }
 }
