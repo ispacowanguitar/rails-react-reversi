@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "components/Square";
+import _ from "lodash";
 import { calculateBoardStateAfterClick } from "utils/boardStateCalculator";
 
 class Game extends React.Component {
@@ -21,13 +22,19 @@ class Game extends React.Component {
   handleSquareClick = (rowIndex, colIndex) => {
     return e => {
       const clickedSquare = { row: rowIndex, column: colIndex };
+      const currentBoard = this.state.board;
+      const newBoardState = calculateBoardStateAfterClick(
+        currentBoard.slice().map(row => row.slice()),
+        clickedSquare,
+        this.state.currentTeamsColor
+      );
+      if (_.isEqual(currentBoard, newBoardState)) {
+        return;
+      }
       this.setState({
-        board: calculateBoardStateAfterClick(
-          this.state.board,
-          clickedSquare,
-          this.state.currentTeamsColor
-        ),
-        currentTeamsColor: "white"
+        board: newBoardState,
+        currentTeamsColor:
+          this.state.currentTeamsColor === "black" ? "white" : "black"
       });
     };
   };
