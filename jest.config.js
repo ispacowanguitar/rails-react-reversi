@@ -68,13 +68,22 @@ module.exports = {
   ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node", "png"],
+  moduleFileExtensions: [
+    "js",
+    "json",
+    "jsx",
+    "ts",
+    "tsx",
+    "node",
+    "png",
+    "scss"
+  ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/spec/javascript/__mocks__/fileMock.js",
-    "\\.(css|less)$": "<rootDir>/spec/javascript/__mocks__/styleMock.js"
+    "\\.(css|less|scss)$": "<rootDir>/spec/javascript/__mocks__/styleMock.js"
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -111,7 +120,11 @@ module.exports = {
   // rootDir: null,
 
   // A list of paths to directories that Jest should use to search for files in
-  roots: ["spec/javascript", "app/javascript/packs"],
+  roots: [
+    "spec/javascript",
+    "app/javascript/packs",
+    "app/javascript/packs/reversiApp"
+  ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
@@ -161,7 +174,6 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

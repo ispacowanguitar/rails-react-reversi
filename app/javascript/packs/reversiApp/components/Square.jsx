@@ -1,7 +1,7 @@
 import React from "react";
 import blackChip from "assets/images/black-othello-piece.png";
 import whiteChip from "assets/images/white-othello-piece.png";
-import "assets/stylesheets/squareStyles";
+import "assets/stylesheets/squareStyles.scss";
 
 const getChipImageFromProps = piece => {
   switch (piece) {
