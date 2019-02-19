@@ -1,3 +1,4 @@
+import { flipSandwichedSquaresAboveClickedSquare } from "./squaresAboveClickedCalculator";
 const INDEX_OF_FURTHEST_RIGHT_COLUMN = 7;
 
 const flipSandwichedSquaresToRightOfClickedSquare = (
@@ -9,6 +10,7 @@ const flipSandwichedSquaresToRightOfClickedSquare = (
   const otherTeamsColor = currentTeamsColor === "black" ? "white" : "black";
 
   let numberOfPossiblySandwichedSquares = 0;
+  let numberOfSandwichedSquares;
   let indexOfPossiblySandwichedSquare = clickedSquare.column + 1;
   while (indexOfPossiblySandwichedSquare < 8) {
     const colorOfCurrent = clickedRow[indexOfPossiblySandwichedSquare];
@@ -19,6 +21,7 @@ const flipSandwichedSquaresToRightOfClickedSquare = (
     ) {
       numberOfPossiblySandwichedSquares++;
     } else if (colorOfCurrent === currentTeamsColor) {
+      numberOfSandwichedSquares = numberOfPossiblySandwichedSquares;
       break;
     } else if (
       indexOfPossiblySandwichedSquare === 7 ||
@@ -28,7 +31,6 @@ const flipSandwichedSquaresToRightOfClickedSquare = (
     }
     indexOfPossiblySandwichedSquare++;
   }
-  const numberOfSandwichedSquares = numberOfPossiblySandwichedSquares;
   if (numberOfSandwichedSquares > 0) {
     boardState[clickedSquare.row][clickedSquare.column] = currentTeamsColor;
   }
@@ -46,8 +48,13 @@ export const calculateBoardStateAfterClick = (
   clickedSquare,
   currentTeamsColor
 ) => {
-  return flipSandwichedSquaresToRightOfClickedSquare(
+  const withUpdatedRightSquares = flipSandwichedSquaresToRightOfClickedSquare(
     boardState,
+    clickedSquare,
+    currentTeamsColor
+  );
+  return flipSandwichedSquaresAboveClickedSquare(
+    withUpdatedRightSquares,
     clickedSquare,
     currentTeamsColor
   );
