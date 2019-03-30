@@ -2,7 +2,7 @@ import { flipSandwichedSquaresToLeftOfClickedSquare } from "utils/squaresToLeftO
 
 describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
   describe("with one sandwiched square", () => {
-    it.only("updates the board correctly", () => {
+    it("updates the board correctly", () => {
       const initialState = [
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
@@ -52,7 +52,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
         const actual = flipSandwichedSquaresToLeftOfClickedSquare(
           initialState,
           clickedSquare,
-          "white"
+          "black"
         );
 
         const expected = [
@@ -90,7 +90,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
             "white"
           );
 
-          expect(actual).toEqual(expected);
+          expect(actual).toEqual(initialState);
         });
       });
       describe("when the current teams color does not go to the edge", () => {
@@ -113,7 +113,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
             "white"
           );
 
-          expect(actual).toEqual(expected);
+          expect(actual).toEqual(initialState);
         });
       });
     });
