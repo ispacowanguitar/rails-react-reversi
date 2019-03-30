@@ -4,7 +4,6 @@ export const flipSandwichedSquaresAboveClickedSquare = (
   currentTeamsColor
 ) => {
   // calculaaate number of sandwiched squares
-  const clickedColumn = clickedSquare.column;
   const otherTeamsColor = currentTeamsColor === "black" ? "white" : "black";
 
   let numberOfPossiblySandwichedSquares = 0;
