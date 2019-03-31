@@ -33,6 +33,7 @@ export const flipSandwichedSquaresToRightOfClickedSquare = (
     }
     indexOfPossiblySandwichedSquare++;
   }
+
   if (numberOfSandwichedSquares > 0) {
     boardState[clickedSquare.row][clickedSquare.column] = currentTeamsColor;
   }
