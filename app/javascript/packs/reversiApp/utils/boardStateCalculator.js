@@ -1,6 +1,7 @@
 import { flipSandwichedSquaresAboveClickedSquare } from "./squaresAboveClickedCalculator";
 import { flipSandwichedSquaresToRightOfClickedSquare } from "./squaresToRightOfClickedCalculator";
 import { flipSandwichedSquaresToLeftOfClickedSquare } from "./squaresToLeftOfClickedCalculator";
+import { flipSandwichedSquaresBelowClickedSquare } from "./squaresBelowClickedCalculator";
 
 export const calculateBoardStateAfterClick = (
   boardState,
@@ -17,9 +18,16 @@ export const calculateBoardStateAfterClick = (
     clickedSquare,
     currentTeamsColor
   );
-  return flipSandwichedSquaresAboveClickedSquare(
+  const withUpdatedBelowSquares = flipSandwichedSquaresBelowClickedSquare(
     withUpdatedRightSquares,
     clickedSquare,
     currentTeamsColor
   );
+  const withUpdatedAboveSquares = flipSandwichedSquaresAboveClickedSquare(
+    withUpdatedBelowSquares,
+    clickedSquare,
+    currentTeamsColor
+  );
+
+  return withUpdatedAboveSquares;
 };

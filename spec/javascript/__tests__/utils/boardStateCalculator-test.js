@@ -101,5 +101,38 @@ describe("calculateBoardStateAfterClick", () => {
         expect(actual).toEqual(expected);
       });
     });
+    describe("when the sandwiched squares are below", () => {
+      it("updates the board correctly", () => {
+        const INITIAL_BOARD_STATE = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "white", "black", null, null, null],
+          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        const clickedSquare = { row: 2, column: 3 };
+
+        const actual = calculateBoardStateAfterClick(
+          INITIAL_BOARD_STATE,
+          clickedSquare,
+          "black"
+        );
+
+        const expected = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "black", null, null, null, null],
+          [null, null, null, "black", "black", null, null, null],
+          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        expect(actual).toEqual(expected);
+      });
+    });
   });
 });
