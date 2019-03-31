@@ -42,19 +42,22 @@ class Game extends React.Component {
 
   render() {
     return (
-      <div className="board">
-        {this.state.board.map((rowState, rowIndex) => {
-          return rowState.map((squareState, colIndex) => {
-            return (
-              <Square
-                onSquareClick={this.handleSquareClick(rowIndex, colIndex)}
-                chip={squareState}
-                key={`${rowIndex}-${colIndex}`}
-              />
-            );
-          });
-        })}
-      </div>
+      <>
+        <div className="board">
+          {this.state.board.map((rowState, rowIndex) => {
+            return rowState.map((squareState, colIndex) => {
+              return (
+                <Square
+                  onSquareClick={this.handleSquareClick(rowIndex, colIndex)}
+                  chip={squareState}
+                  key={`${rowIndex}-${colIndex}`}
+                />
+              );
+            });
+          })}
+          <span>Turn: {this.state.currentTeamsColor}</span>
+        </div>
+      </>
     );
   }
 }

@@ -17,6 +17,11 @@ describe("<Game />", () => {
       expect(wrapper.find("Square").get(35).props.chip).toBe("black");
       expect(wrapper.find("Square").get(36).props.chip).toBe("white");
     });
+
+    it("displays whose turn it is", () => {
+      const wrapper = mount(<Game />);
+      expect(wrapper.text()).toContain("Turn: black");
+    });
   });
 
   describe("Turn one (black first)", () => {
@@ -30,6 +35,16 @@ describe("<Game />", () => {
 
         expect(wrapper.find("Square").get(26).props.chip).toBe("black");
         expect(wrapper.find("Square").get(27).props.chip).toBe("black");
+      });
+
+      it("changes whose turn it is", () => {
+        const wrapper = mount(<Game />);
+        const validSquare = wrapper.find("Square").get(26);
+
+        validSquare.props.onSquareClick();
+        wrapper.update();
+
+        expect(wrapper.text()).toContain("Turn: white");
       });
     });
 
