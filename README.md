@@ -6,6 +6,3 @@
 3. `bundle install`
 4. `yarn install`
 5. `foreman start -f Procfile.dev -p 3000`
-
-And... 
-
