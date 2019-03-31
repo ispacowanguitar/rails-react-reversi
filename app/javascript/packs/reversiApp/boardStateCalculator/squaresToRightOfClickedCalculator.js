@@ -5,6 +5,9 @@ export const flipSandwichedSquaresToRightOfClickedSquare = (
   clickedSquare,
   currentTeamsColor
 ) => {
+  if (clickedSquare.column === 7) {
+    return boardState;
+  }
   const clickedRow = boardState[clickedSquare.row];
   const otherTeamsColor = currentTeamsColor === "black" ? "white" : "black";
 
