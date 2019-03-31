@@ -1,4 +1,4 @@
-import { flipSandwichedSquaresToRightOfClickedSquare } from "utils/squaresToRightOfClickedCalculator";
+import { flipSandwichedSquaresToRightOfClickedSquare } from "boardStateCalculator/squaresToRightOfClickedCalculator";
 
 describe("flipSandwichedSquaresToRightOfClickedSquare", () => {
   describe("with one sandwiched square", () => {

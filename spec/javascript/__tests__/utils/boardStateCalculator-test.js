@@ -1,4 +1,4 @@
-import { calculateBoardStateAfterClick } from "utils/boardStateCalculator";
+import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
 
 describe("calculateBoardStateAfterClick", () => {
   describe("when a valid square is clicked", () => {
