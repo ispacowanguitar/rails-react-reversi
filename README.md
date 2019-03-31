@@ -10,7 +10,11 @@ cd rails-react-reversi
 bundle install
 yarn install
 ```
-2. Run both backend and frontend with 
+2. Run test suite
+```
+yarn test
+```
+3. Run both backend and frontend with 
 ```
 foreman start -f Procfile.dev -p 3000
 ```
