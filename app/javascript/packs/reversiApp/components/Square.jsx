@@ -5,9 +5,9 @@ import "assets/stylesheets/squareStyles.scss";
 
 const getChipImageFromProps = piece => {
   switch (piece) {
-    case "white":
+    case "wh":
       return whiteChip;
-    case "black":
+    case "bl":
       return blackChip;
     default:
       return false;

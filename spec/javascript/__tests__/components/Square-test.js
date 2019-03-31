@@ -9,12 +9,12 @@ describe("<Square />", () => {
   });
 
   it("can render a black chip", () => {
-    const wrapper = shallow(<Square chip="black" />);
+    const wrapper = shallow(<Square chip="bl" />);
     expect(wrapper.find("img").length).toBe(1);
   });
 
   it("can render a white chip", () => {
-    const wrapper = shallow(<Square chip="white" />);
+    const wrapper = shallow(<Square chip="wh" />);
     expect(wrapper.find("img").length).toBe(1);
   });
 });

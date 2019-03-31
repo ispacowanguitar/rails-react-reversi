@@ -7,8 +7,8 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
-        [null, null, null, "white", "black", null, null, null],
-        [null, null, null, "black", "white", null, null, null],
+        [null, null, null, "wh", "bl", null, null, null],
+        [null, null, null, "bl", "wh", null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null]
@@ -19,15 +19,15 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
       const actual = flipSandwichedSquaresToLeftOfClickedSquare(
         initialState,
         clickedSquare,
-        "white"
+        "wh"
       );
 
       const expected = [
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
-        [null, null, null, "white", "white", "white", null, null],
-        [null, null, null, "black", "white", null, null, null],
+        [null, null, null, "wh", "wh", "wh", null, null],
+        [null, null, null, "bl", "wh", null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null]
@@ -41,8 +41,8 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "white", "white", null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "wh", "wh", null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -52,15 +52,15 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
         const actual = flipSandwichedSquaresToLeftOfClickedSquare(
           initialState,
           clickedSquare,
-          "black"
+          "bl"
         );
 
         const expected = [
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "black", "black", "black", null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "bl", "bl", "bl", null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -76,7 +76,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
-            ["black", "black", "black", "black", "black", null, null, null],
+            ["bl", "bl", "bl", "bl", "bl", null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
@@ -87,7 +87,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
           const actual = flipSandwichedSquaresToLeftOfClickedSquare(
             initialState,
             clickedSquare,
-            "white"
+            "wh"
           );
 
           expect(actual).toEqual(initialState);
@@ -99,7 +99,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
-            [null, "black", "black", "black", "black", null, null, null],
+            [null, "bl", "bl", "bl", "bl", null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
@@ -110,7 +110,7 @@ describe("flipSandwichedSquaresToLeftOfClickedSquare", () => {
           const actual = flipSandwichedSquaresToLeftOfClickedSquare(
             initialState,
             clickedSquare,
-            "white"
+            "wh"
           );
 
           expect(actual).toEqual(initialState);

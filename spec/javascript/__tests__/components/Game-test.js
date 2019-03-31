@@ -12,10 +12,10 @@ describe("<Game />", () => {
     it("Sets up the board correctly", () => {
       const wrapper = mount(<Game />);
       expect(wrapper.find("img").length).toBe(4);
-      expect(wrapper.find("Square").get(27).props.chip).toBe("white");
-      expect(wrapper.find("Square").get(28).props.chip).toBe("black");
-      expect(wrapper.find("Square").get(35).props.chip).toBe("black");
-      expect(wrapper.find("Square").get(36).props.chip).toBe("white");
+      expect(wrapper.find("Square").get(27).props.chip).toBe("wh");
+      expect(wrapper.find("Square").get(28).props.chip).toBe("bl");
+      expect(wrapper.find("Square").get(35).props.chip).toBe("bl");
+      expect(wrapper.find("Square").get(36).props.chip).toBe("wh");
     });
 
     it("displays whose turn it is", () => {
@@ -33,8 +33,8 @@ describe("<Game />", () => {
         validSquare.props.onSquareClick();
         wrapper.update();
 
-        expect(wrapper.find("Square").get(26).props.chip).toBe("black");
-        expect(wrapper.find("Square").get(27).props.chip).toBe("black");
+        expect(wrapper.find("Square").get(26).props.chip).toBe("bl");
+        expect(wrapper.find("Square").get(27).props.chip).toBe("bl");
       });
 
       it("changes whose turn it is", () => {

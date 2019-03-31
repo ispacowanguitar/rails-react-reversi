@@ -8,8 +8,8 @@ describe("calculateBoardStateAfterClick", () => {
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -19,15 +19,15 @@ describe("calculateBoardStateAfterClick", () => {
         const actual = calculateBoardStateAfterClick(
           INITIAL_BOARD_STATE,
           clickedSquare,
-          "black"
+          "bl"
         );
 
         const expected = [
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, "black", "black", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, "bl", "bl", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -41,8 +41,8 @@ describe("calculateBoardStateAfterClick", () => {
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -52,15 +52,15 @@ describe("calculateBoardStateAfterClick", () => {
         const actual = calculateBoardStateAfterClick(
           INITIAL_BOARD_STATE,
           clickedSquare,
-          "black"
+          "bl"
         );
 
         const expected = [
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "black", "black", null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "bl", "bl", null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -73,8 +73,8 @@ describe("calculateBoardStateAfterClick", () => {
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
-            [null, null, null, "white", "black", null, null, null],
-            [null, null, null, "black", "white", "white", "white", null],
+            [null, null, null, "wh", "bl", null, null, null],
+            [null, null, null, "bl", "wh", "wh", "wh", null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null]
@@ -84,15 +84,15 @@ describe("calculateBoardStateAfterClick", () => {
           const actual = calculateBoardStateAfterClick(
             initialState,
             clickedSquare,
-            "black"
+            "bl"
           );
 
           const expected = [
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
-            [null, null, null, "white", "black", null, null, null],
-            [null, null, null, "black", "black", "black", "black", "black"],
+            [null, null, null, "wh", "bl", null, null, null],
+            [null, null, null, "bl", "bl", "bl", "bl", "bl"],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null]
@@ -107,8 +107,8 @@ describe("calculateBoardStateAfterClick", () => {
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -118,16 +118,16 @@ describe("calculateBoardStateAfterClick", () => {
         const actual = calculateBoardStateAfterClick(
           INITIAL_BOARD_STATE,
           clickedSquare,
-          "black"
+          "bl"
         );
 
         const expected = [
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "black", null, null, null],
-          [null, null, null, null, "black", null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, null, "bl", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
         ];
@@ -140,8 +140,8 @@ describe("calculateBoardStateAfterClick", () => {
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "white", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]
@@ -151,15 +151,15 @@ describe("calculateBoardStateAfterClick", () => {
         const actual = calculateBoardStateAfterClick(
           INITIAL_BOARD_STATE,
           clickedSquare,
-          "black"
+          "bl"
         );
 
         const expected = [
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, "black", null, null, null, null],
-          [null, null, null, "black", "black", null, null, null],
-          [null, null, null, "black", "white", null, null, null],
+          [null, null, null, "bl", null, null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null]

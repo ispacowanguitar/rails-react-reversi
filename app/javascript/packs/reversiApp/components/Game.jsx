@@ -4,6 +4,11 @@ import _ from "lodash";
 import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
 import "assets/stylesheets/boardStyles.scss";
 
+const TURN_DISPLAY_COLORS = {
+  wh: "white",
+  bl: "black"
+};
+
 class Game extends React.Component {
   constructor() {
     super();
@@ -11,13 +16,13 @@ class Game extends React.Component {
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null],
-      [null, null, null, "white", "black", null, null, null],
-      [null, null, null, "black", "white", null, null, null],
+      [null, null, null, "wh", "bl", null, null, null],
+      [null, null, null, "bl", "wh", null, null, null],
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null]
     ];
-    this.state = { board: INITIAL_BOARD_STATE, currentTeamsColor: "black" };
+    this.state = { board: INITIAL_BOARD_STATE, currentTeamsColor: "bl" };
   }
 
   handleSquareClick = (rowIndex, colIndex) => {
@@ -34,8 +39,7 @@ class Game extends React.Component {
       }
       this.setState({
         board: newBoardState,
-        currentTeamsColor:
-          this.state.currentTeamsColor === "black" ? "white" : "black"
+        currentTeamsColor: this.state.currentTeamsColor === "bl" ? "wh" : "bl"
       });
     };
   };
@@ -54,7 +58,7 @@ class Game extends React.Component {
             );
           });
         })}
-        <span>Turn: {this.state.currentTeamsColor}</span>
+        <span>Turn: {TURN_DISPLAY_COLORS[this.state.currentTeamsColor]}</span>
       </div>
     );
   }
