@@ -167,5 +167,38 @@ describe("calculateBoardStateAfterClick", () => {
         expect(actual).toEqual(expected);
       });
     });
+    describe("when the sandwiched squares are to the upper right", () => {
+      it("updates the board correctly", () => {
+        const INITIAL_BOARD_STATE = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, "wh", null, null, null],
+          [null, null, "bl", "bl", "wh", null, null, null],
+          [null, null, null, "bl", "wh", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        const clickedSquare = { row: 5, column: 2 };
+
+        const actual = calculateBoardStateAfterClick(
+          INITIAL_BOARD_STATE,
+          clickedSquare,
+          "wh"
+        );
+
+        const expected = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, "wh", null, null, null],
+          [null, null, "bl", "bl", "wh", null, null, null],
+          [null, null, null, "wh", "wh", null, null, null],
+          [null, null, "wh", null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        expect(actual).toEqual(expected);
+      });
+    });
   });
 });
