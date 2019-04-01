@@ -1,6 +1,6 @@
-import { flipSandwichedSquaresAboveClickedSquare } from "boardStateCalculator/singleDirectionCalculators/squaresAboveClickedCalculator";
+import { flipSandwichedSquaresBelowClickedSquare } from "boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator";
 
-describe("flipSandwichedSquaresAboveClickedSquare", () => {
+describe("flipSandwichedSquaresBelowClickedSquare", () => {
   describe("with one sandwiched square", () => {
     it("updates the board correctly", () => {
       const initialState = [
@@ -14,8 +14,8 @@ describe("flipSandwichedSquaresAboveClickedSquare", () => {
         [null, null, null, null, null, null, null, null]
       ];
 
-      const clickedSquare = { row: 5, column: 4 };
-      const actual = flipSandwichedSquaresAboveClickedSquare(
+      const clickedSquare = { row: 2, column: 3 };
+      const actual = flipSandwichedSquaresBelowClickedSquare(
         initialState,
         clickedSquare,
         "bl"
@@ -24,10 +24,10 @@ describe("flipSandwichedSquaresAboveClickedSquare", () => {
       const expected = [
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null],
-        [null, null, null, "wh", "bl", null, null, null],
+        [null, null, null, "bl", null, null, null, null],
         [null, null, null, "bl", "bl", null, null, null],
-        [null, null, null, null, "bl", null, null, null],
+        [null, null, null, "bl", "wh", null, null, null],
+        [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null]
       ];
@@ -39,16 +39,16 @@ describe("flipSandwichedSquaresAboveClickedSquare", () => {
       const initialState = [
         [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null],
+        [null, null, null, "bl", null, null, null, null],
+        [null, null, null, "bl", "bl", null, null, null],
+        [null, null, "wh", "wh", "wh", null, null, null],
         [null, null, null, null, null, null, null, null],
-        [null, null, null, "wh", "bl", null, null, null],
-        [null, null, null, "bl", "wh", null, null, null],
-        [null, null, null, "bl", null, null, null, null],
-        [null, null, null, "bl", null, null, null, null],
+        [null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null]
       ];
 
-      const clickedSquare = { row: 7, column: 3 };
-      const actual = flipSandwichedSquaresAboveClickedSquare(
+      const clickedSquare = { row: 1, column: 3 };
+      const actual = flipSandwichedSquaresBelowClickedSquare(
         initialState,
         clickedSquare,
         "wh"
@@ -56,42 +56,42 @@ describe("flipSandwichedSquaresAboveClickedSquare", () => {
 
       const expected = [
         [null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null],
+        [null, null, null, "wh", null, null, null, null],
+        [null, null, null, "wh", null, null, null, null],
         [null, null, null, "wh", "bl", null, null, null],
-        [null, null, null, "wh", "wh", null, null, null],
-        [null, null, null, "wh", null, null, null, null],
-        [null, null, null, "wh", null, null, null, null],
-        [null, null, null, "wh", null, null, null, null]
+        [null, null, "wh", "wh", "wh", null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
       ];
       expect(actual).toEqual(expected);
     });
   });
   describe("with no sandwiched squares", () => {
-    describe("when the current teams color goes to the edge", () => {
+    describe("when the other teams color goes to the edge", () => {
       it("does not update the board", () => {
         const initialState = [
-          [null, null, null, "bl", null, null, null, null],
-          [null, null, null, "bl", null, null, null, null],
-          [null, null, null, "bl", null, null, null, null],
-          [null, null, null, "bl", "bl", null, null, null],
-          [null, null, null, "bl", "wh", null, null, null],
           [null, null, null, null, null, null, null, null],
           [null, null, null, null, null, null, null, null],
-          [null, null, null, null, null, null, null, null]
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "wh", "bl", null, null, null],
+          [null, null, null, "wh", "wh", null, null, null],
+          [null, null, null, "wh", null, null, null, null],
+          [null, null, null, "wh", null, null, null, null],
+          [null, null, null, "wh", null, null, null, null]
         ];
 
-        const clickedSquare = { row: 5, column: 3 };
-        const actual = flipSandwichedSquaresAboveClickedSquare(
+        const clickedSquare = { row: 2, column: 3 };
+        const actual = flipSandwichedSquaresBelowClickedSquare(
           initialState,
           clickedSquare,
-          "wh"
+          "bl"
         );
 
         expect(actual).toEqual(initialState);
       });
     });
-    describe("when the current teams color does not go to the edge", () => {
+    describe("when the other teams color does not go to the edge", () => {
       it("does not update the board", () => {
         const initialState = [
           [null, null, null, null, null, null, null, null],
@@ -104,8 +104,8 @@ describe("flipSandwichedSquaresAboveClickedSquare", () => {
           [null, null, null, null, null, null, null, null]
         ];
 
-        const clickedSquare = { row: 5, column: 3 };
-        const actual = flipSandwichedSquaresAboveClickedSquare(
+        const clickedSquare = { row: 1, column: 3 };
+        const actual = flipSandwichedSquaresBelowClickedSquare(
           initialState,
           clickedSquare,
           "wh"

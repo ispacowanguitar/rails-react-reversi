@@ -1,7 +1,7 @@
-import { flipSandwichedSquaresAboveClickedSquare } from "./singleDirectionCalculators/squaresAboveClickedCalculator";
-import { flipSandwichedSquaresToRightOfClickedSquare } from "./singleDirectionCalculators/squaresToRightOfClickedCalculator";
-import { flipSandwichedSquaresToLeftOfClickedSquare } from "./singleDirectionCalculators/squaresToLeftOfClickedCalculator";
-import { flipSandwichedSquaresBelowClickedSquare } from "./singleDirectionCalculators/squaresBelowClickedCalculator";
+import { flipSandwichedSquaresAboveClickedSquare } from "./singleDirectionCalculators/straight/squaresAboveClickedCalculator";
+import { flipSandwichedSquaresToRightOfClickedSquare } from "./singleDirectionCalculators/straight/squaresToRightOfClickedCalculator";
+import { flipSandwichedSquaresToLeftOfClickedSquare } from "./singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator";
+import { flipSandwichedSquaresBelowClickedSquare } from "./singleDirectionCalculators/straight/squaresBelowClickedCalculator";
 
 export const calculateBoardStateAfterClick = (
   boardState,
