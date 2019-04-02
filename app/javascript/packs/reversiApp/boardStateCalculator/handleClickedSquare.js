@@ -3,6 +3,7 @@ import { flipSandwichedSquaresToRightOfClickedSquare } from "./singleDirectionCa
 import { flipSandwichedSquaresToLeftOfClickedSquare } from "./singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator";
 import { flipSandwichedSquaresBelowClickedSquare } from "./singleDirectionCalculators/straight/squaresBelowClickedCalculator";
 import { flipSandwichedSquaresToUpperRightOfClicked } from "./singleDirectionCalculators/diagonal/squaresToUpperRightCalculator";
+import { flipSandwichedSquaresToUpperLeftOfClicked } from "./singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator";
 
 export const calculateBoardStateAfterClick = (
   boardState,
@@ -34,6 +35,11 @@ export const calculateBoardStateAfterClick = (
     clickedSquare,
     currentTeamsColor
   );
+  const withUpdatedUpperLeftSquares = flipSandwichedSquaresToUpperLeftOfClicked(
+    withUpdatedUpperRightSquares,
+    clickedSquare,
+    currentTeamsColor
+  );
 
-  return withUpdatedUpperRightSquares;
+  return withUpdatedUpperLeftSquares;
 };

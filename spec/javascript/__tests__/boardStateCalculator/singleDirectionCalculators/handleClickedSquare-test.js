@@ -200,5 +200,38 @@ describe("calculateBoardStateAfterClick", () => {
         expect(actual).toEqual(expected);
       });
     });
+    describe("when the sandwiched squares are to the upper left", () => {
+      it("updates the board correctly", () => {
+        const INITIAL_BOARD_STATE = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "bl", null, null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, "wh", "wh", "wh", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        const clickedSquare = { row: 5, column: 5 };
+
+        const actual = calculateBoardStateAfterClick(
+          INITIAL_BOARD_STATE,
+          clickedSquare,
+          "bl"
+        );
+
+        const expected = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "bl", null, null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, "wh", "wh", "bl", null, null, null],
+          [null, null, null, null, null, "bl", null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        expect(actual).toEqual(expected);
+      });
+    });
   });
 });
