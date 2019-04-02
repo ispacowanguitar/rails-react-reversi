@@ -10,6 +10,9 @@ export const calculateBoardStateAfterClick = (
   clickedSquare,
   currentTeamsColor
 ) => {
+  if (boardState[clickedSquare.row][clickedSquare.column] != null) {
+    return boardState;
+  }
   const withUpdatedLeftSquares = flipSandwichedSquaresToLeftOfClickedSquare(
     boardState,
     clickedSquare,

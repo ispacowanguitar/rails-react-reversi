@@ -234,4 +234,39 @@ describe("calculateBoardStateAfterClick", () => {
       });
     });
   });
+  describe("when an invalid square is clicked", () => {
+    describe("when there is already a piece in that square", () => {
+      it("does not change the board", () => {
+        const INITIAL_BOARD_STATE = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, "wh", null, null, null],
+          [null, "wh", "wh", "wh", "wh", null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, null, null, "bl", null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        const clickedSquare = { row: 5, column: 5 };
+
+        const actual = calculateBoardStateAfterClick(
+          INITIAL_BOARD_STATE,
+          clickedSquare,
+          "wh"
+        );
+
+        const expected = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, "wh", null, null, null],
+          [null, "wh", "wh", "wh", "wh", null, null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, null, null, "bl", null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        expect(actual).toEqual(expected);
+      });
+    });
+  });
 });
