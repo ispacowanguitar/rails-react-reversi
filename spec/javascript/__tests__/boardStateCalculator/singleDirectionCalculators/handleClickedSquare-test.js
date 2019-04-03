@@ -335,4 +335,37 @@ describe("calculateBoardStateAfterClick", () => {
       });
     });
   });
+  describe("when sydney breaks the game", () => {
+    it("doesnt break", () => {
+      const initialBoardState = [
+        [null, null, null, "bl", "wh", "bl", null, null],
+        [null, null, null, "bl", "wh", "bl", null, null],
+        [null, null, null, "bl", "wh", "bl", null, null],
+        ["bl", "bl", "bl", "bl", "bl", "wh", null, null],
+        [null, null, "bl", "bl", "bl", "wh", "wh", "wh"],
+        [null, "bl", "bl", "bl", "bl", "wh", "wh", "wh"],
+        [null, null, null, null, "bl", "wh", null, "wh"],
+        [null, null, null, null, null, "wh", null, null]
+      ];
+
+      const clickedSquare = { row: 3, column: 6 };
+      const actual = calculateBoardStateAfterClick(
+        initialBoardState,
+        clickedSquare,
+        "bl"
+      );
+
+      const expected = [
+        [null, null, null, "bl", "wh", "bl", null, null],
+        [null, null, null, "bl", "wh", "bl", null, null],
+        [null, null, null, "bl", "wh", "bl", null, null],
+        ["bl", "bl", "bl", "bl", "bl", "bl", "bl", null],
+        [null, null, "bl", "bl", "bl", "bl", "wh", "wh"],
+        [null, "bl", "bl", "bl", "bl", "wh", "wh", "wh"],
+        [null, null, null, null, "bl", "wh", null, "wh"],
+        [null, null, null, null, null, "wh", null, null]
+      ];
+      expect(actual).toEqual(expected);
+    });
+  });
 });

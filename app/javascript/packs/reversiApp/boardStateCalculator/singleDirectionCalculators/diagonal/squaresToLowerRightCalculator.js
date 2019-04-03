@@ -25,7 +25,7 @@ export const flipSandwichedSquaresToLowerRightOfClicked = (
       numberOfSandwichedSquares === 0
     ) {
       return boardState;
-    } else if (currentSquare === null || currentRow === 0 || currentCol === 7) {
+    } else if (currentSquare === null || currentRow === 7 || currentCol === 7) {
       return boardState;
     }
     currentRow++;

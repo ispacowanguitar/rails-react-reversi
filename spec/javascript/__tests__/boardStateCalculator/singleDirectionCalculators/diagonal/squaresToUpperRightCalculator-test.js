@@ -100,4 +100,36 @@ describe("flipSandwichedSquaresToUpperRightOfClicked", () => {
       expect(actual).toEqual(expected);
     });
   });
+  describe("when the other teams color goes all the way to the edge", () => {
+    it("does not error", () => {
+      const initialState = [
+        [null, null, null, null, null, null, "wh", null],
+        [null, null, null, null, null, "wh", null, null],
+        [null, null, null, null, "wh", null, null, null],
+        [null, null, null, "wh", null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
+      ];
+      const clickedSquare = { row: 4, column: 2 };
+      const actual = flipSandwichedSquaresToUpperRightOfClicked(
+        initialState,
+        clickedSquare,
+        "bl"
+      );
+
+      const expected = [
+        [null, null, null, null, null, null, "wh", null],
+        [null, null, null, null, null, "wh", null, null],
+        [null, null, null, null, "wh", null, null, null],
+        [null, null, null, "wh", null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
+      ];
+      expect(actual).toEqual(expected);
+    });
+  });
 });
