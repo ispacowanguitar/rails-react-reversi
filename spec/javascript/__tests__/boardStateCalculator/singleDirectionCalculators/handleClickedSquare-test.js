@@ -266,6 +266,39 @@ describe("calculateBoardStateAfterClick", () => {
         expect(actual).toEqual(expected);
       });
     });
+    describe("when the sandwiched squares are to the lower left", () => {
+      it("updates the board correctly", () => {
+        const initialState = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, "wh", "wh", "wh", null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, null, "bl", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+
+        const clickedSquare = { row: 2, column: 5 };
+        const actual = calculateBoardStateAfterClick(
+          initialState,
+          clickedSquare,
+          "bl"
+        );
+
+        const expected = [
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, "bl", null, null],
+          [null, null, null, "wh", "bl", "wh", null, null],
+          [null, null, null, "bl", "bl", null, null, null],
+          [null, null, null, null, "bl", null, null, null],
+          [null, null, null, null, null, null, null, null],
+          [null, null, null, null, null, null, null, null]
+        ];
+        expect(actual).toEqual(expected);
+      });
+    });
   });
   describe("when an invalid square is clicked", () => {
     describe("when there is already a piece in that square", () => {
