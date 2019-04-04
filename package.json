@@ -17,21 +17,21 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "resolve-url-loader": "^3.0.1",
-    "webpack-cli": "^3.3.0"
-  },
-  "devDependencies": {
+    "webpack-cli": "^3.3.0",
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.5.0",
     "babel-jest": "^24.5.0",
     "cssnano": "^4.1.10",
-    "jest": "^24.5.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "regenerator-runtime": "^0.13.2",
     "sugarss": "^2.0.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "devDependencies": {
+    "jest": "^24.5.0"
   },
   "scripts": {
     "start": "./bin/webpack-dev-server",
