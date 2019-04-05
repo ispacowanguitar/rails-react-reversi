@@ -1,0 +1,1 @@
+.square{border:1px solid #000;height:75px;width:75px;background-color:#32b832}.board{display:grid;width:600px;grid-template-columns:auto auto auto auto auto auto auto auto;margin:120px auto auto}

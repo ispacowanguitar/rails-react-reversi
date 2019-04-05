@@ -1,0 +1,176 @@
+{
+  "application.js": "/packs/js/application-79d4b3eaad8fea210e3c.js",
+  "application.js.map": "/packs/js/application-79d4b3eaad8fea210e3c.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-79d4b3eaad8fea210e3c.js"
+      ],
+      "js.map": [
+        "/packs/js/application-79d4b3eaad8fea210e3c.js.map"
+      ]
+    },
+    "reversiApp/assets/images/black-othello-piece": {
+      "js": [
+        "/packs/js/reversiApp/assets/images/black-othello-piece-0bce6696579ac6aa04b0.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/assets/images/black-othello-piece-0bce6696579ac6aa04b0.js.map"
+      ]
+    },
+    "reversiApp/assets/images/white-othello-piece": {
+      "js": [
+        "/packs/js/reversiApp/assets/images/white-othello-piece-368150b2dc632a5f2fd8.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/assets/images/white-othello-piece-368150b2dc632a5f2fd8.js.map"
+      ]
+    },
+    "reversiApp/assets/stylesheets/boardStyles": {
+      "js": [
+        "/packs/js/reversiApp/assets/stylesheets/boardStyles-0724f50a99017c5294f8.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/assets/stylesheets/boardStyles-0724f50a99017c5294f8.js.map"
+      ]
+    },
+    "reversiApp/assets/stylesheets/squareStyles": {
+      "js": [
+        "/packs/js/reversiApp/assets/stylesheets/squareStyles-b1d17349dcec89ab2d33.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/assets/stylesheets/squareStyles-b1d17349dcec89ab2d33.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/handleClickedSquare": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/handleClickedSquare-708ecb6d84d370e75aac.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/handleClickedSquare-708ecb6d84d370e75aac.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator-721326b874a94dbac38f.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator-721326b874a94dbac38f.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator-8f8808a472ab80457f58.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator-8f8808a472ab80457f58.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator-e6f2736319fc7661e147.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator-e6f2736319fc7661e147.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator-711306432f71835e9211.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator-711306432f71835e9211.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator-5f68beca48de749caa8b.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator-5f68beca48de749caa8b.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator-ed1232948422bd6337bb.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator-ed1232948422bd6337bb.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator-caa693b887649e156ec6.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator-caa693b887649e156ec6.js.map"
+      ]
+    },
+    "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator": {
+      "js": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator-6a603933c6acc31d0620.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator-6a603933c6acc31d0620.js.map"
+      ]
+    },
+    "reversiApp/components/Game": {
+      "js": [
+        "/packs/js/reversiApp/components/Game-3765e838288de596c1b5.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/components/Game-3765e838288de596c1b5.js.map"
+      ]
+    },
+    "reversiApp/components/Square": {
+      "js": [
+        "/packs/js/reversiApp/components/Square-75cab8760d4af40b1163.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/components/Square-75cab8760d4af40b1163.js.map"
+      ]
+    },
+    "reversiApp/index": {
+      "js": [
+        "/packs/js/reversiApp/index-19548e1f0d5661610bdf.js"
+      ],
+      "js.map": [
+        "/packs/js/reversiApp/index-19548e1f0d5661610bdf.js.map"
+      ]
+    }
+  },
+  "media/packs/reversiApp/assets/images/black-othello-piece.png": "/packs/media/packs/reversiApp/assets/images/black-othello-piece-2f7aa0ce8b1507167b3d7ca7b19a4356.png",
+  "media/packs/reversiApp/assets/images/white-othello-piece.png": "/packs/media/packs/reversiApp/assets/images/white-othello-piece-6ce304e03bc86f89c61abf2b712fdbbc.png",
+  "reversiApp/assets/images/black-othello-piece.js": "/packs/js/reversiApp/assets/images/black-othello-piece-0bce6696579ac6aa04b0.js",
+  "reversiApp/assets/images/black-othello-piece.js.map": "/packs/js/reversiApp/assets/images/black-othello-piece-0bce6696579ac6aa04b0.js.map",
+  "reversiApp/assets/images/white-othello-piece.js": "/packs/js/reversiApp/assets/images/white-othello-piece-368150b2dc632a5f2fd8.js",
+  "reversiApp/assets/images/white-othello-piece.js.map": "/packs/js/reversiApp/assets/images/white-othello-piece-368150b2dc632a5f2fd8.js.map",
+  "reversiApp/assets/stylesheets/boardStyles.js": "/packs/js/reversiApp/assets/stylesheets/boardStyles-0724f50a99017c5294f8.js",
+  "reversiApp/assets/stylesheets/boardStyles.js.map": "/packs/js/reversiApp/assets/stylesheets/boardStyles-0724f50a99017c5294f8.js.map",
+  "reversiApp/assets/stylesheets/squareStyles.js": "/packs/js/reversiApp/assets/stylesheets/squareStyles-b1d17349dcec89ab2d33.js",
+  "reversiApp/assets/stylesheets/squareStyles.js.map": "/packs/js/reversiApp/assets/stylesheets/squareStyles-b1d17349dcec89ab2d33.js.map",
+  "reversiApp/boardStateCalculator/handleClickedSquare.js": "/packs/js/reversiApp/boardStateCalculator/handleClickedSquare-708ecb6d84d370e75aac.js",
+  "reversiApp/boardStateCalculator/handleClickedSquare.js.map": "/packs/js/reversiApp/boardStateCalculator/handleClickedSquare-708ecb6d84d370e75aac.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator-721326b874a94dbac38f.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerLeftCalculator-721326b874a94dbac38f.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator-8f8808a472ab80457f58.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToLowerRightCalculator-8f8808a472ab80457f58.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator-e6f2736319fc7661e147.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperLeftCalculator-e6f2736319fc7661e147.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator-711306432f71835e9211.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/diagonal/squaresToUpperRightCalculator-711306432f71835e9211.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator-5f68beca48de749caa8b.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresAboveClickedCalculator-5f68beca48de749caa8b.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator-ed1232948422bd6337bb.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresBelowClickedCalculator-ed1232948422bd6337bb.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator-caa693b887649e156ec6.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToLeftOfClickedCalculator-caa693b887649e156ec6.js.map",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator.js": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator-6a603933c6acc31d0620.js",
+  "reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator.js.map": "/packs/js/reversiApp/boardStateCalculator/singleDirectionCalculators/straight/squaresToRightOfClickedCalculator-6a603933c6acc31d0620.js.map",
+  "reversiApp/components/Game.js": "/packs/js/reversiApp/components/Game-3765e838288de596c1b5.js",
+  "reversiApp/components/Game.js.map": "/packs/js/reversiApp/components/Game-3765e838288de596c1b5.js.map",
+  "reversiApp/components/Square.js": "/packs/js/reversiApp/components/Square-75cab8760d4af40b1163.js",
+  "reversiApp/components/Square.js.map": "/packs/js/reversiApp/components/Square-75cab8760d4af40b1163.js.map",
+  "reversiApp/index.js": "/packs/js/reversiApp/index-19548e1f0d5661610bdf.js",
+  "reversiApp/index.js.map": "/packs/js/reversiApp/index-19548e1f0d5661610bdf.js.map"
+}
