@@ -2,7 +2,7 @@ import React from "react";
 import Square from "components/Square";
 import _ from "lodash";
 import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
-import "assets/stylesheets/boardStyles.scss";
+import "assets/stylesheets/boardStyles.css";
 
 const TURN_DISPLAY_COLORS = {
   wh: "white",
