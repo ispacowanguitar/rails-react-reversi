@@ -12,6 +12,9 @@ export const flipSandwichedSquaresToUpperLeftOfClicked = (
   let currentRow = clickedSquare.row - 1;
   let currentCol = clickedSquare.column - 1;
   while (true) {
+    if (currentRow < 0 || currentCol < 0) {
+      return boardState;
+    }
     const currentSquare = boardState[currentRow][currentCol];
 
     if (currentSquare === otherTeamsColor) {
