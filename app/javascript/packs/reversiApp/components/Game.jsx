@@ -3,6 +3,7 @@ import Square from "components/Square";
 import _ from "lodash";
 import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
 import "assets/stylesheets/boardStyles.css";
+import moveExists from "boardStateCalculator/moveExists";
 
 const TURN_DISPLAY_COLORS = {
   wh: "white",
@@ -37,10 +38,24 @@ class Game extends React.Component {
       if (_.isEqual(currentBoard, newBoardState)) {
         return;
       }
-      this.setState({
-        board: newBoardState,
-        currentTeamsColor: this.state.currentTeamsColor === "bl" ? "wh" : "bl"
-      });
+      const nextTeamsColor =
+        this.state.currentTeamsColor === "bl" ? "wh" : "bl";
+      if (
+        moveExists(
+          newBoardState.slice().map(row => row.slice()),
+          nextTeamsColor
+        )
+      ) {
+        this.setState({
+          board: newBoardState,
+          currentTeamsColor: nextTeamsColor
+        });
+      } else {
+        this.setState({
+          board: newBoardState,
+          currentTeamsColor: this.state.currentTeamsColor
+        });
+      }
     };
   };
 

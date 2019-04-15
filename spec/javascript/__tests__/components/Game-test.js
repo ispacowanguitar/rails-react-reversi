@@ -71,4 +71,26 @@ describe("<Game />", () => {
       });
     });
   });
+
+  describe("when there are no valid turns for the next player", () => {
+    it("skips their turn", () => {
+      const state = [
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        [null, null, "bl", "wh", "wh", "wh", "wh", "wh"],
+        [null, "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        [null, null, null, "bl", "bl", "bl", "bl", "bl"],
+        [null, "bl", "bl", "bl", "bl", "bl", "bl", null],
+        [null, null, null, "bl", "bl", "bl", "bl", "bl"],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
+      ];
+      const wrapper = mount(<Game />);
+      wrapper.setState({ board: state, currentTeamsColor: "wh" });
+      const clickedSquare = wrapper.find("Square").get(9);
+
+      clickedSquare.props.onSquareClick();
+
+      expect(wrapper.state("currentTeamsColor")).toBe("wh");
+    });
+  });
 });
