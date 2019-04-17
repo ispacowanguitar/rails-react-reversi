@@ -23,7 +23,11 @@ class Game extends React.Component {
       [null, null, null, null, null, null, null, null],
       [null, null, null, null, null, null, null, null]
     ];
-    this.state = { board: INITIAL_BOARD_STATE, currentTeamsColor: "bl" };
+    this.state = {
+      board: INITIAL_BOARD_STATE,
+      currentTeamsColor: "bl",
+      score: { bl: 2, wh: 2 }
+    };
   }
 
   handleSquareClick = (rowIndex, colIndex) => {
@@ -59,22 +63,43 @@ class Game extends React.Component {
     };
   };
 
+  componentDidUpdate = (_, prevState) => {
+    if (prevState.board === this.state.board) {
+      return;
+    }
+    const score = this.state.board.reduce(
+      (acc, row) => {
+        const blackScore = row.filter(square => square === "bl").length;
+        const whiteScore = row.filter(square => square === "wh").length;
+        return { wh: acc.wh + whiteScore, bl: acc.bl + blackScore };
+      },
+      { wh: 0, bl: 0 }
+    );
+    this.setState(prevState => {
+      return { ...prevState, score };
+    });
+  };
+
   render() {
     return (
-      <div className="board">
-        {this.state.board.map((rowState, rowIndex) => {
-          return rowState.map((squareState, colIndex) => {
-            return (
-              <Square
-                onSquareClick={this.handleSquareClick(rowIndex, colIndex)}
-                chip={squareState}
-                key={`${rowIndex}-${colIndex}`}
-              />
-            );
-          });
-        })}
-        <span>Turn: {TURN_DISPLAY_COLORS[this.state.currentTeamsColor]}</span>
-      </div>
+      <>
+        <div className="board">
+          {this.state.board.map((rowState, rowIndex) => {
+            return rowState.map((squareState, colIndex) => {
+              return (
+                <Square
+                  onSquareClick={this.handleSquareClick(rowIndex, colIndex)}
+                  chip={squareState}
+                  key={`${rowIndex}-${colIndex}`}
+                />
+              );
+            });
+          })}
+        </div>
+        <h3>Turn: {TURN_DISPLAY_COLORS[this.state.currentTeamsColor]}</h3>
+        <h3>Black: {this.state.score.bl}</h3>
+        <h3>White: {this.state.score.wh}</h3>
+      </>
     );
   }
 }

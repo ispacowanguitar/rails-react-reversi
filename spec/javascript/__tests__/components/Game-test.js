@@ -22,6 +22,12 @@ describe("<Game />", () => {
       const wrapper = mount(<Game />);
       expect(wrapper.text()).toContain("Turn: black");
     });
+
+    it("displays the score", () => {
+      const wrapper = mount(<Game />);
+      expect(wrapper.text()).toContain("Black: 2");
+      expect(wrapper.text()).toContain("White: 2");
+    });
   });
 
   describe("Turn one (black first)", () => {
@@ -45,6 +51,17 @@ describe("<Game />", () => {
         wrapper.update();
 
         expect(wrapper.text()).toContain("Turn: white");
+      });
+
+      it("shows the updated score", () => {
+        const wrapper = mount(<Game />);
+        const validSquare = wrapper.find("Square").get(26);
+
+        validSquare.props.onSquareClick();
+        wrapper.update();
+
+        expect(wrapper.text()).toContain("White: 1");
+        expect(wrapper.text()).toContain("Black: 4");
       });
     });
 
