@@ -4,6 +4,7 @@ import _ from "lodash";
 import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
 import "assets/stylesheets/boardStyles.css";
 import moveExists from "boardStateCalculator/moveExists";
+import Confetti from "react-confetti";
 
 const TURN_DISPLAY_COLORS = {
   wh: "white",
@@ -80,9 +81,14 @@ class Game extends React.Component {
     });
   };
 
+  isGameOver = () => {
+    return this.state.score.wh + this.state.score.bl === 64;
+  };
+
   render() {
     return (
       <>
+        {this.isGameOver() && <Confetti />}
         <div className="board">
           {this.state.board.map((rowState, rowIndex) => {
             return rowState.map((squareState, colIndex) => {
@@ -96,9 +102,11 @@ class Game extends React.Component {
             });
           })}
         </div>
-        <h3>Turn: {TURN_DISPLAY_COLORS[this.state.currentTeamsColor]}</h3>
-        <h3>Black: {this.state.score.bl}</h3>
-        <h3>White: {this.state.score.wh}</h3>
+        <div className="game-info">
+          <h3>Turn: {TURN_DISPLAY_COLORS[this.state.currentTeamsColor]}</h3>
+          <h3>Black: {this.state.score.bl}</h3>
+          <h3>White: {this.state.score.wh}</h3>
+        </div>
       </>
     );
   }

@@ -80,6 +80,7 @@ describe("<Game />", () => {
         const wrapper = mount(<Game />);
         const invalidSquare = wrapper.find("Square").get(0);
         const validSquare = wrapper.find("Square").get(26);
+        cckonsole.log(wrapper.debug());
 
         invalidSquare.props.onSquareClick();
         validSquare.props.onSquareClick();
@@ -108,6 +109,50 @@ describe("<Game />", () => {
       clickedSquare.props.onSquareClick();
 
       expect(wrapper.state("currentTeamsColor")).toBe("wh");
+    });
+  });
+
+  describe("when the game is over", () => {
+    it("shows confetti", () => {
+      const state = [
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "bl", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "bl", "bl", "bl", "bl", "bl"],
+        ["wh", "bl", "bl", "bl", "bl", "bl", "bl", "wh"],
+        ["wh", "wh", "wh", "bl", "bl", "bl", "bl", "bl"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"]
+      ];
+      const wrapper = mount(<Game />).setState({
+        board: state,
+        currentTeamsColor: "wh"
+      });
+      wrapper.update();
+
+      expect(wrapper.find("Confetti").length).toBe(1);
+    });
+  });
+  describe("when the game is not over", () => {
+    it.only("shows confetti", () => {
+      const state = [
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "bl", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "bl", "bl", "bl", "bl", "bl"],
+        ["wh", "bl", "bl", "bl", "bl", "bl", "bl", "wh"],
+        ["wh", "wh", "wh", "bl", "bl", "bl", "bl", "bl"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
+        ["wh", "wh", "wh", "wh", "wh", "wh", "wh", null]
+      ];
+      const wrapper = mount(<Game />).setState({
+        board: state,
+        currentTeamsColor: "wh"
+      });
+
+      wrapper.update();
+
+      expect(wrapper.find("Confetti").length).toBe(0);
     });
   });
 });
