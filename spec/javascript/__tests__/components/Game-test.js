@@ -134,7 +134,7 @@ describe("<Game />", () => {
     });
   });
   describe("when the game is not over", () => {
-    it.only("shows confetti", () => {
+    it("does not show confetti", () => {
       const state = [
         ["wh", "wh", "wh", "wh", "wh", "wh", "wh", "wh"],
         ["wh", "wh", "bl", "wh", "wh", "wh", "wh", "wh"],
