@@ -18,14 +18,15 @@ describe("<Game />", () => {
       expect(wrapper.find("Square").get(36).props.chip).toBe("wh");
     });
 
-    it("displays whose turn it is", () => {
-      const wrapper = mount(<Game />);
-      expect(wrapper.text()).toContain("Turn: black");
-    });
-
     it("displays the score", () => {
       const wrapper = mount(<Game />);
       expect(wrapper.text()).toContain("Black: 2");
+      expect(wrapper.text()).toContain("White: 2");
+    });
+
+    it("shows a pointer next to the current players turn", () => {
+      const wrapper = mount(<Game />);
+      expect(wrapper.text()).toContain("▶ Black: 2 ◀");
       expect(wrapper.text()).toContain("White: 2");
     });
   });
@@ -50,7 +51,8 @@ describe("<Game />", () => {
         validSquare.props.onSquareClick();
         wrapper.update();
 
-        expect(wrapper.text()).toContain("Turn: white");
+        expect(wrapper.text()).toContain("Black: 4");
+        expect(wrapper.text()).toContain("▶ White: 1 ◀");
       });
 
       it("shows the updated score", () => {
@@ -80,7 +82,6 @@ describe("<Game />", () => {
         const wrapper = mount(<Game />);
         const invalidSquare = wrapper.find("Square").get(0);
         const validSquare = wrapper.find("Square").get(26);
-        cckonsole.log(wrapper.debug());
 
         invalidSquare.props.onSquareClick();
         validSquare.props.onSquareClick();
