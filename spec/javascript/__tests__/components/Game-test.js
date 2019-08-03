@@ -20,14 +20,14 @@ describe("<Game />", () => {
 
     it("displays the score", () => {
       const wrapper = mount(<Game />);
-      expect(wrapper.text()).toContain("Black: 2");
-      expect(wrapper.text()).toContain("White: 2");
+      expect(wrapper.find("GameInfo").text()).toContain("Black: 2");
+      expect(wrapper.find("GameInfo").text()).toContain("White: 2");
     });
 
     it("shows a pointer next to the current players turn", () => {
       const wrapper = mount(<Game />);
-      expect(wrapper.text()).toContain("▶ Black: 2 ◀");
-      expect(wrapper.text()).toContain("White: 2");
+      expect(wrapper.find("GameInfo").text()).toContain("▶ Black: 2 ◀");
+      expect(wrapper.find("GameInfo").text()).toContain("White: 2");
     });
   });
 
@@ -51,8 +51,8 @@ describe("<Game />", () => {
         validSquare.props.onSquareClick();
         wrapper.update();
 
-        expect(wrapper.text()).toContain("Black: 4");
-        expect(wrapper.text()).toContain("▶ White: 1 ◀");
+        expect(wrapper.find("GameInfo").text()).toContain("Black: 4");
+        expect(wrapper.find("GameInfo").text()).toContain("▶ White: 1 ◀");
       });
 
       it("shows the updated score", () => {
@@ -62,8 +62,8 @@ describe("<Game />", () => {
         validSquare.props.onSquareClick();
         wrapper.update();
 
-        expect(wrapper.text()).toContain("White: 1");
-        expect(wrapper.text()).toContain("Black: 4");
+        expect(wrapper.find("GameInfo").text()).toContain("White: 1");
+        expect(wrapper.find("GameInfo").text()).toContain("Black: 4");
       });
     });
 

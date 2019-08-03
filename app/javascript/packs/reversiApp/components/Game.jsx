@@ -5,6 +5,7 @@ import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClicke
 import "assets/stylesheets/boardStyles.css";
 import moveExists from "boardStateCalculator/moveExists";
 import Confetti from "react-confetti";
+import GameInfo from "./GameInfo";
 
 const TURN_DISPLAY_COLORS = {
   wh: "white",
@@ -102,18 +103,10 @@ class Game extends React.Component {
             });
           })}
         </div>
-        <div className="game-info">
-          <h3>
-            {this.state.currentTeamsColor === "bl" && String.fromCharCode(9654)}{" "}
-            Black: {this.state.score.bl}{" "}
-            {this.state.currentTeamsColor === "bl" && String.fromCharCode(9664)}
-          </h3>
-          <h3>
-            {this.state.currentTeamsColor === "wh" && String.fromCharCode(9654)}{" "}
-            White: {this.state.score.wh}{" "}
-            {this.state.currentTeamsColor === "wh" && String.fromCharCode(9664)}
-          </h3>
-        </div>
+        <GameInfo
+          currentTeamsColor={this.state.currentTeamsColor}
+          score={{ bl: this.state.score.bl, wh: this.state.score.wh }}
+        />
       </>
     );
   }
