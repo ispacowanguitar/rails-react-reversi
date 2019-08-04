@@ -1,6 +1,8 @@
 import React from "react";
 import Square from "components/Square";
 import _ from "lodash";
+import { connect } from "react-redux";
+import { turn, turnAndSkip, undo, redo } from "redux/actions";
 import { calculateBoardStateAfterClick } from "boardStateCalculator/handleClickedSquare";
 import "assets/stylesheets/boardStyles.css";
 import moveExists from "boardStateCalculator/moveExists";
@@ -13,33 +15,22 @@ const TURN_DISPLAY_COLORS = {
 };
 
 class Game extends React.Component {
-  constructor() {
-    super();
-    const INITIAL_BOARD_STATE = [
-      [null, null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null, null],
-      [null, null, null, "wh", "bl", null, null, null],
-      [null, null, null, "bl", "wh", null, null, null],
-      [null, null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null, null]
-    ];
+  constructor(props) {
+    super(props);
     this.state = {
-      board: INITIAL_BOARD_STATE,
-      currentTeamsColor: "bl",
-      score: { bl: 2, wh: 2 }
+      board: props.board,
+      currentTeamsColor: props.currentTeamsColor
     };
   }
 
   handleSquareClick = (rowIndex, colIndex) => {
     return e => {
       const clickedSquare = { row: rowIndex, column: colIndex };
-      const currentBoard = this.state.board;
+      const currentBoard = this.props.board;
       const newBoardState = calculateBoardStateAfterClick(
         currentBoard.slice().map(row => row.slice()),
         clickedSquare,
-        this.state.currentTeamsColor
+        this.props.currentTeamsColor
       );
       if (_.isEqual(currentBoard, newBoardState)) {
         return;
@@ -52,24 +43,15 @@ class Game extends React.Component {
           nextTeamsColor
         )
       ) {
-        this.setState({
-          board: newBoardState,
-          currentTeamsColor: nextTeamsColor
-        });
+        this.props.takeTurn(newBoardState);
       } else {
-        this.setState({
-          board: newBoardState,
-          currentTeamsColor: this.state.currentTeamsColor
-        });
+        this.props.takeTurnAndSkip(newBoardState);
       }
     };
   };
 
-  componentDidUpdate = (_, prevState) => {
-    if (prevState.board === this.state.board) {
-      return;
-    }
-    const score = this.state.board.reduce(
+  score = () => {
+    return this.props.board.reduce(
       (acc, row) => {
         const blackScore = row.filter(square => square === "bl").length;
         const whiteScore = row.filter(square => square === "wh").length;
@@ -77,13 +59,10 @@ class Game extends React.Component {
       },
       { wh: 0, bl: 0 }
     );
-    this.setState(prevState => {
-      return { ...prevState, score };
-    });
   };
 
   isGameOver = () => {
-    return this.state.score.wh + this.state.score.bl === 64;
+    return this.score().wh + this.score().bl === 64;
   };
 
   render() {
@@ -91,7 +70,7 @@ class Game extends React.Component {
       <>
         {this.isGameOver() && <Confetti />}
         <div className="board">
-          {this.state.board.map((rowState, rowIndex) => {
+          {this.props.board.map((rowState, rowIndex) => {
             return rowState.map((squareState, colIndex) => {
               return (
                 <Square
@@ -104,12 +83,31 @@ class Game extends React.Component {
           })}
         </div>
         <GameInfo
-          currentTeamsColor={this.state.currentTeamsColor}
-          score={{ bl: this.state.score.bl, wh: this.state.score.wh }}
+          currentTeamsColor={this.props.currentTeamsColor}
+          score={{ bl: this.score().bl, wh: this.score().wh }}
         />
       </>
     );
   }
 }
 
-export default Game;
+const mapStateToProps = state => {
+  return {
+    board: state.board.current,
+    currentTeamsColor: state.currentTeamsColor,
+    score: state.score
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    takeTurn: board => dispatch(turn(board)),
+    takeTurnAndSkip: board => dispatch(turnAndSkip(board))
+  };
+};
+
+const ConnectedGame = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Game);
+export default ConnectedGame;
