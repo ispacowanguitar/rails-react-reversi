@@ -82,6 +82,9 @@ class Game extends React.Component {
             });
           })}
         </div>
+        <button id="undoButton" onClick={this.props.undo}>
+          undo
+        </button>
         <GameInfo
           currentTeamsColor={this.props.currentTeamsColor}
           score={{ bl: this.score().bl, wh: this.score().wh }}
@@ -102,7 +105,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     takeTurn: board => dispatch(turn(board)),
-    takeTurnAndSkip: board => dispatch(turnAndSkip(board))
+    takeTurnAndSkip: board => dispatch(turnAndSkip(board)),
+    undo: () => dispatch(undo())
   };
 };
 

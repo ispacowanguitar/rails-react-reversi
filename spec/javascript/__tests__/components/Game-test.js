@@ -172,4 +172,50 @@ describe("<Game />", () => {
       expect(wrapper.find("Confetti").length).toBe(0);
     });
   });
+
+  describe("undo button", () => {
+    it("doesnt break the page if there is nothing to undo", () => {
+      const wrapper = mountWithRedux(<Game />);
+
+      wrapper
+        .find("#undoButton")
+        .props()
+        .onClick();
+    });
+
+    it("sets the state to the previous state", () => {
+      const previousState = [
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, "wh", "bl", null, null, null],
+        [null, null, null, "bl", "wh", null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
+      ];
+      const currentState = [
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, "wh", "bl", null, null, null],
+        [null, null, null, "bl", "bl", "bl", null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null]
+      ];
+      const wrapper = mountWithRedux(<Game />, {
+        board: { current: currentState, previous: [previousState], future: [] },
+        currentTeamsColor: "bl"
+      });
+
+      wrapper
+        .find("#undoButton")
+        .props()
+        .onClick();
+      wrapper.update();
+
+      expect(wrapper.find("Game").props().board).toBe(previousState);
+    });
+  });
 });
